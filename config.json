@@ -1,0 +1,19 @@
+{
+  "source_priority": ["resume", "csv", "linkedin", "github", "ats"],
+  "output": {
+    "fields": [
+      {"path": "id", "from": "id"},
+      {"path": "name", "from": "resolved_fields.name.value"},
+      {"path": "emails", "from": "emails"},
+      {"path": "phone", "from": "phones[0].value", "normalize": "E164"},
+      {"path": "title", "from": "resolved_fields.title.value"},
+      {"path": "company", "from": "resolved_fields.company.value"},
+      {"path": "skills", "from": "skills"},
+      {"path": "experience", "from": "experience"},
+      {"path": "education", "from": "education"},
+      {"path": "sources", "from": "sources"}
+    ],
+    "include_confidence": true,
+    "include_provenance": true
+  }
+}

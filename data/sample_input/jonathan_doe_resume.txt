@@ -1,0 +1,13 @@
+Jonathan Doe
+john@gmail.com
++91 98765 43210
+
+Skills:
+Py, AWS, Kubernetes, React.js
+
+Experience:
+Senior Software Engineer at Acme Corp (Jan 2020 - Present)
+Backend Developer, Initech (2018/01 - 2020/01)
+
+Education:
+B.Tech Computer Science, IIT Delhi
