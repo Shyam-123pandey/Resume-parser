@@ -6,6 +6,16 @@
 > emits configurable JSON output — without ever transforming a source directly
 > into the output format.
 
+##  Design Philosophy & Technical Decisions
+
+This project was built to showcase the ability to design a **clean data pipeline**, handle **messy real-world inputs**, and make **thoughtful software engineering decisions**. 
+
+Key design decisions include:
+- **Separation of Concerns:** Raw sources are never transformed directly into the output schema. Everything passes through an intermediate canonical model.
+- **Intelligent Conflict Resolution:** When sources disagree (e.g., a CSV vs. a Resume on a job title), the pipeline uses configurable priority rules rather than arbitrary overwrites.
+- **Auditability (Provenance):** Every single data point maintains a strict audit trail (provenance) and a confidence score, ensuring that data hygiene can always be verified in a production environment.
+- **Extensibility:** Adding a new data source (like a new ATS API) requires zero changes to the core normalization, deduplication, or validation logic.
+
 ---
 
 ## Architecture
@@ -200,3 +210,10 @@ candidate-transformer/
 ├── pyproject.toml         # Package metadata
 └── requirements.txt       # Dev/test dependencies
 ```
+
+---
+
+## Future Enhancements
+
+- **Web Interface:** Build a lightweight FastAPI backend and a modern frontend (e.g., React/Vite) to visually demonstrate the deduplication and conflict resolution via a drag-and-drop UI.
+- **Database Integration:** Swap the in-memory profile store for a persistent database (PostgreSQL/MongoDB) without altering the pipeline logic.
